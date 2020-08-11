@@ -1,4 +1,7 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import AuthContext from '../hooks/AuthContext';
+import { fetchSignup } from '../services/auth';
 
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
