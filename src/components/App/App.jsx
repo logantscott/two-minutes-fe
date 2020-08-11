@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Home from '../home/Home';
 import Header from '../header/Header';
+import Signup from '../auth/Signup';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Router>
         <Header />
         <hr />
+        <Signup />
         <Switch>
           <Route exact path='/' component={Home} />
         </Switch>

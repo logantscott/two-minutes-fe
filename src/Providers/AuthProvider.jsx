@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import AuthContext from '../hooks/AuthContext';
+import { AuthContext } from '../hooks/AuthContext';
 import { fetchSignup } from '../services/auth';
 
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
-  const signup = (email, password) => {
-    fetchSignup(email, password)
+  const signup = (name, email, password) => {
+    fetchSignup(name, email, password)
       .then(user => setCurrentUser(user));
   };
 
   return (
-    <AuthContext.Provider value={(currentUser, signup)}>
+    <AuthContext.Provider value={{ currentUser, signup }}>
       {children}
     </AuthContext.Provider>
   );
