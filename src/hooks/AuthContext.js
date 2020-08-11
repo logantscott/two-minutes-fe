@@ -11,3 +11,13 @@ export const useSignup = () => {
   const { signup } = useContext(AuthContext);
   return signup;
 };
+
+export const useLogin = () => {
+  const { login } = useContext(AuthContext);
+  return login;
+};
+
+export const useAuthError = () => {
+  const { authError } = useContext(AuthContext);
+  return authError;
+};

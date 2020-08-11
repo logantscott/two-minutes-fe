@@ -7,6 +7,7 @@ import {
 import Home from '../home/Home';
 import Header from '../header/Header';
 import Signup from '../auth/Signup';
+import Login from '../auth/Login';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Header />
         <hr />
         <Signup />
+        <Login />
         <Switch>
           <Route exact path='/' component={Home} />
         </Switch>

@@ -11,7 +11,10 @@ const Header = () => {
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li>{currentUser ?
-          <Link to='/dashboard'>Dashboard</Link> :
+          <>
+            <Link to='/dashboard'>Dashboard</Link>
+            <Link to='/signout'>Sign Out</Link> 
+          </> :
           <Link to='/login'>Signup/Login</Link>}
         </li>
       </ul>
