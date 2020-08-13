@@ -8,6 +8,8 @@ import Home from '../home/Home';
 import Header from '../header/Header';
 import Signup from '../auth/Signup';
 import Login from '../auth/Login';
+import Goals from '../goals/Goals';
+import PrivateRoute from '../auth/PrivateRoute';
 
 export default function App() {
   return (
@@ -19,6 +21,7 @@ export default function App() {
         <Login />
         <Switch>
           <Route exact path='/' component={Home} />
+          <PrivateRoute exact path='/dashboard' component={Goals} />
         </Switch>
       </Router>
     </>

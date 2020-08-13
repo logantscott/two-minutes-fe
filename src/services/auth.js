@@ -1,23 +1,17 @@
+import { get, post } from './request';
+
 export const fetchSignup = (name, email, password) => {
-  return fetch(`${process.env.API_URL}/api/v1/users/signup`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ name, email, password })
-  })
-    .then(res => res.json());
+  return post('/api/v1/auth/signup', { name, email, password });
 };
 
 export const fetchLogin = (email, password) => {
-  return fetch(`${process.env.API_URL}/api/v1/users/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ email, password })
-  })
-    .then(res => res.json());
+  return post('/api/v1/auth/login', { email, password });
+};
+
+export const fetchVerify = () => {
+  return get('/api/v1/auth/verify');
+};
+
+export const fetchLogout = () => {
+  return get('/api/v1/auth/logout');
 };
