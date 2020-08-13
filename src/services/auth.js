@@ -1,5 +1,5 @@
 export const fetchSignup = (name, email, password) => {
-  return fetch('http://localhost:7890/api/v1/users/signup', {
+  return fetch(`${process.env.API_URL}/api/v1/users/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -11,7 +11,7 @@ export const fetchSignup = (name, email, password) => {
 };
 
 export const fetchLogin = (email, password) => {
-  return fetch('http://localhost:7890/api/v1/users/login', {
+  return fetch(`${process.env.API_URL}/api/v1/users/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
