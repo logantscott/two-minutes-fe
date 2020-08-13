@@ -1,0 +1,12 @@
+.Header {
+  li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  a {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+}
