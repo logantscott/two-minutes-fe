@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLogin } from '../../hooks/AuthContext';
+import AuthError from './AuthError';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,11 +19,14 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" name="email" autoComplete="email" placeholder="Email" value={email} onChange={handleChange} />
-      <input type="password" name="password" autoComplete="current-password" placeholder="Password" value={password} onChange={handleChange} />
-      <button>Login</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input type="email" name="email" autoComplete="email" placeholder="Email" value={email} onChange={handleChange} />
+        <input type="password" name="password" autoComplete="current-password" placeholder="Password" value={password} onChange={handleChange} />
+        <button>Login</button>
+      </form>
+      <AuthError />
+    </>
   );
 };
 
