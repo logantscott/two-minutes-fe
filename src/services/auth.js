@@ -11,3 +11,7 @@ export const fetchLogin = (email, password) => {
 export const fetchVerify = () => {
   return get('/api/v1/auth/verify');
 };
+
+export const fetchLogout = () => {
+  return get('/api/v1/auth/logout');
+};

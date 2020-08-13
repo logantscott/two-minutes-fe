@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders Header 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "authError": null,
+      "authLoading": true,
+      "currentUser": null,
+      "login": [Function],
+      "logout": [Function],
+      "signup": [Function],
+    }
+  }
+>
+  <Header />
+</ContextProvider>
+`;

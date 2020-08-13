@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSignup } from '../../hooks/AuthContext';
 import AuthError from './AuthError';
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -8,6 +9,7 @@ const Signup = () => {
   const [password, setPassword] = useState('');
 
   const signup = useSignup();
+  const history = useHistory();
 
   const handleChange = ({ target }) => {
     if(target.name === 'name') setName(target.value);
@@ -17,7 +19,8 @@ const Signup = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    signup(name, email, password);
+    signup(name, email, password)
+      .then(() => history.push('/dashboard'));
   };
 
   return (

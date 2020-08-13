@@ -1,10 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from './Header.css';
-import { useCurrentUser } from '../../hooks/AuthContext';
+import { useCurrentUser, useLogout } from '../../hooks/AuthContext';
 
 const Header = () => {
   const currentUser = useCurrentUser();
+  const history = useHistory();
+  const logout = useLogout();
+
+  const handleLogout = () => {
+    logout()
+      .then(() => history.push('/'));
+  };
 
   return (
     <nav className={styles.Header}>
@@ -14,7 +21,7 @@ const Header = () => {
           currentUser ?
             <>
               <Link to='/dashboard'>Dashboard</Link>
-              <Link to='/signout'>Sign Out</Link> 
+              <a onClick={handleLogout}>Logout</a>
             </>
             : <Link to='/login'>Signup/Login</Link>
         }</li>
